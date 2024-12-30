@@ -6,8 +6,179 @@
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Weather App</title>
   </head>
+
   <body>
-    <h1>Welcome to the Weather Forcast App</h1>
+      <!--Search Bar-->
+    <header>
+      <form action="">
+        <input type="search" placeholder="Enter a city.." required />
+        <input type="submit" value="search" />
+      </form>
+    </header>
+<!--Todays Forcast-->
+    <main>
+        <h1 class="city text-center text-dark">Paris</h1>
+        <p class="text-center text-light" id="date">Sat, 28 December, 9:00</p>
+
+        <div class="left-box text-center">
+          <img
+            class="icon-today-weather"
+            src="https://basmilius.github.io/weather-icons/production/fill/all/drizzle.svg"
+          />
+          <p class="icon-description">Rain</p>
+        </div>
+        <div class="right-box text-center">
+          <span class="current-temp text-dark" id="current-temp">2</span>
+          <a class="unit-type" id="celsius">°C</a>
+          <a class="line">|</a>
+          <a class="unit-type" id="fahrenheit">°F</a>
+          <div class="min-max-temp">
+            <i
+              class="min-temp-icon"
+              src="https://basmilius.github.io/weather-icons/production/fill/all/thermometer-colder.svg"
+            ></i>
+           <div class="high-low">
+              <div id="high-today"></div>
+              <div id="low-today"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="additional-weather-details">
+            <div id="weather-description"></div>
+            <div id="real-feel-temperature"></div>
+            <div id="humidity"></div>
+            <div id="windspeed"></div>
+          </div>
+
+           <!--Forcast Per Hour-->
+
+        <div class="d-flex justify-content-center flex-wrap">
+          <div class="hour-box">
+            <h4 class="text-center">Now</h4>
+            <img
+              class="hour-weather-icon"
+              src="images/snowflake.png"
+              alt="Snow icon"
+            />
+            <h4 class="text-center">-8°C</h4>
+          </div>
+          <div class="hour-box">
+            <h4 class="text-center">16</h4>
+            <img
+              class="hour-weather-icon"
+              src="images/snowflake.png"
+              alt="Snow icon"
+            />
+            <h4 class="text-center">-8°C</h4>
+          </div>
+          <div class="hour-box">
+            <h4 class="text-center">17</h4>
+            <img
+              class="hour-weather-icon"
+              src="images/cloud.png"
+              alt="Clouds icon"
+            />
+            <h4 class="text-center">-8°C</h4>
+          </div>
+          <div class="hour-box">
+            <h4 class="text-center">18</h4>
+            <img
+              class="hour-weather-icon"
+              src="images/cloud.png"
+              alt="Clouds icon"
+            />
+            <h4 class="text-center">-8°C</h4>
+          </div>
+          <div class="hour-box">
+            <h4 class="text-center">19</h4>
+            <img
+              class="hour-weather-icon"
+              src="images/snowflake.png"
+              alt="Snow icon"
+            />
+            <h4 class="text-center">-9°C</h4>
+          </div>
+          <div class="hour-box">
+            <h4 class="text-center">20</h4>
+            <img
+              class="hour-weather-icon"
+              src="images/snowflake.png"
+              alt="Snow icon"
+            />
+            <h4 class="text-center">-9°C</h4>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Forcast Per Day -->
+        <div class="d-flex justify-content-around">
+          <div class="weekdays d-flex flex-column">
+            <p class="pt-3">Tuesday</p>
+            <p class="pt-3">Wednesday</p>
+            <p class="pt-3">Thursday</p>
+            <p class="pt-3">Friday</p>
+            <p class="pt-3">Saturday</p>
+          </div>
+          <div class="days-icons d-flex flex-column justify-content-around">
+            <div>
+              <img
+                class="day-icon"
+                src="images/snowflake.png"
+                alt="Snow icon"
+              />
+            </div>
+            <div>
+              <img
+                class="day-icon"
+                src="images/snowflake.png"
+                alt="Snow icon"
+              />
+            </div>
+            <div>
+              <img
+                class="day-icon"
+                src="images/snowflake.png"
+                alt="Snow icon"
+              />
+            </div>
+            <div>
+              <img class="day-icon" src="images/rain.png" alt="Snow icon" />
+            </div>
+            <div>
+              <img class="day-icon" src="images/sun.png" alt="Snow icon" />
+            </div>
+          </div>
+
+          <div class="days-max-temp d-flex flex-column">
+            <p class="pt-3">
+              <i class="fas fa-thermometer-three-quarters"></i> -6°C
+            </p>
+            <p class="pt-3">
+              <i class="fas fa-thermometer-three-quarters"></i> -6°C
+            </p>
+            <p class="pt-3">
+              <i class="fas fa-thermometer-three-quarters"></i> -3°C
+            </p>
+            <p class="pt-3">
+              <i class="fas fa-thermometer-three-quarters"></i> -2°C
+            </p>
+            <p class="pt-3">
+              <i class="fas fa-thermometer-three-quarters"></i> -1°C
+            </p>
+          </div>
+          <div class="days-max-temp d-flex flex-column">
+            <p class="pt-3"><i class="fas fa-thermometer-quarter"></i> -11°C</p>
+            <p class="pt-3"><i class="fas fa-thermometer-quarter"></i> -11°C</p>
+            <p class="pt-3"><i class="fas fa-thermometer-quarter"></i> -10°C</p>
+            <p class="pt-3"><i class="fas fa-thermometer-quarter"></i> -8°C</p>
+            <p class="pt-3"><i class="fas fa-thermometer-quarter"></i> -6°C</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
     <footer>
       Coded by
       <a href="https://github.com/cinda87" target="_blank">Jacinda Bietz</a>, is
