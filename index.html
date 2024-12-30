@@ -4,45 +4,54 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Englebert&display=swap"
+      rel="stylesheet"
+    />
     <title>Weather App</title>
     <link rel="stylesheet" href="src/style.css" />
   </head>
 
   <body>
-    <!--Search Bar-->
-    <header>
-      <form action="">
-        <input type="search" placeholder="Enter a city.." required />
-        <input type="submit" value="search" />
-      </form>
-    </header>
+    <div class="weather-app">
+      <!--Search Bar-->
+      <header>
+        <form action="">
+          <input type="search" placeholder="Enter a city.." required />
+          <input type="submit" value="search" />
+        </form>
+      </header>
 
-    <!--Todays Forcast-->
-    <main>
-      <div>
-        <h1>Paris</h1>
-        <p>
-          Sunday 17:20, Sunny
-          <br />
-          Humidity: 66%, Wind: 3.12km/h
-        </p>
-      </div>
-      <div>☀️ 13°C</div>
-    </main>
+      <!--Todays Forcast-->
+      <main>
+        <div>
+          <h1>Paris</h1>
+          <p>
+            Sunday 17:20, Sunny
+            <br />
+            Humidity: 66%, Wind: 3.12km/h
+          </p>
+        </div>
+        <div>☀️ 13°C</div>
+      </main>
 
-    <footer>
-      This project was coded by
-      <a href="https://github.com/cinda87" target="_blank">Jacinda Bietz</a>, is
-      <a
-        href="https://github.com/cinda87/p-w7-vanilla-weather-app"
-        target="_blank"
-        >open sourced on GitHub</a
-      >
-      and
-      <a href="https://jacinda-weather-forcast.netlify.app/" target="_blank"
-        >hosted on Netlify</a
-      >
-    </footer>
+      <footer>
+        This project was coded by
+        <a href="https://github.com/cinda87" target="_blank">Jacinda Bietz</a>,
+        is
+        <a
+          href="https://github.com/cinda87/p-w7-vanilla-weather-app"
+          target="_blank"
+          >open sourced on GitHub</a
+        >
+        and
+        <a href="https://jacinda-weather-forcast.netlify.app/" target="_blank"
+          >hosted on Netlify</a
+        >
+      </footer>
+    </div>
     <script type="text/javascript" src="src/index.js"></script>
   </body>
 </html>
