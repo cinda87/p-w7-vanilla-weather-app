@@ -10,14 +10,17 @@
       href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Englebert&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=thermometer"
+    />
     <title>Weather App</title>
     <link rel="stylesheet" href="src/style.css" />
   </head>
 
   <body>
-
     <video autoplay muted loop>
-      <source src="media/clouds.mp4" type="video/mp4" />
+      <source src="media/background.mp4" type="video/mp4" />
     </video>
     <div class="weather-app">
       <!--Search Bar-->
@@ -33,85 +36,121 @@
         </form>
       </header>
 
-      <!--Todays Forcast-->
+      <!--Todays forecast-->
       <main>
         <div class="header">
           <h1>Paris, France</h1>
-          <h2>17:30</h2>
-          <h3>Monday, December 20, 2024</h3>
-        </div>
-        <div class="today">
-          <div>
-            <p class="todays-weather">
-              Feels Like: 15°C<br />Pressure: 1200<br />Humidity: 66%<br />Wind
-              Speed: 3.12km/h
-            </p>
+          <h2 class="date-time">Wed, 1 January, 8:29</h2>
+          <div class="main-weather-flex">
+            <div class="left-box">
+              <img
+                class="img-today-weather"
+                src="media/clear-day.svg"
+                alt="Current Weather Image"
+              />
+              <p class="img-desc">Clear skies</p>
+            </div>
+            <div class="right-box">
+              <span class="current-temp">13</span>
+              <a class="unit-type">°C</a>
+              <a class="line">|</a>
+              <a class="unit-type">°F</a>
+              <p class="hi-low-today">
+                <span class="material-symbols-outlined red"> thermometer </span>
+                <span class="max">15°</span>
+                <span class="material-symbols-outlined blue">
+                  thermometer
+                </span>
+                <span class="min">7°</span>
+              </p>
+            </div>
           </div>
-          <p class="current-temp">🌤️13°C</p>
-          <p class="hi-low">High: 17°C<br />Low: 10°C</p>
+        </div>
+        <div class="todays-weather">
+          <p class="todays-info">Feels Like: 15°C</p>
+          <p class="todays-info">Pressure: 1200</p>
+          <p class="todays-info">Humidity: 66%</p>
+          <p class="todays-info">Wind: 3.12km/h</p>
         </div>
       </main>
-    </div>
-    <!--Weekly forcast-->
-    <div class="'flex-container" >
-      <div class="daily-forcast">
-        <h3>Monday</h3>
-        <img class="forcast-image" src="media/cloudy.svg" alt="" />
-        <p>14°C</p>
-        <p>5°C</p>
-      </div>
-      <div class="daily-forcast">
-        <h3>Tuesday</h3>
-        <img class="forcast-image" src="media/partly-cloudy-day.svg" alt="" />
-        <p>14°C</p>
-        <p>5°C</p>
-      </div>
-      <div class="daily-forcast">
-        <h3>Wednesday</h3>
-        <img class="forcast-image" src="media/thunderstorms-rain.svg" alt="" />
-        <p>14°C</p>
-        <p>5°C</p>
-      </div>
-      <div class="daily-forcast">
-        <h3>Thursday</h3>
-        <img class="forcast-image" src="media/cloudy.svg" alt="" />
-        <p>14°C</p>
-        <p>5°C</p>
-      </div>
-      <div class="daily-forcast">
-        <h3>Friday</h3>
-        <img class="forcast-image" src="media/clear-day.svg" alt="" />
-        <p>14°C</p>
-        <p>5°C</p>
-      </div>
-      <div class="daily-forcast">
-        <h3>Saturday</h3>
-        <img class="forcast-image" src="media/cloudy.svg" alt="" />
-        <p>14°C</p>
-        <p>5°C</p>
-      </div>
-      <div class="daily-forcast">
-        <h3>Sunday</h3>
-        <img class="forcast-image" src="media/snow.svg" alt="" />
-        <p>14°C</p>
-        <p>5°C</p>
-      </div>
-    </div>
 
-    <footer>
-      This project was coded by
-      <a href="https://github.com/cinda87" target="_blank">Jacinda Bietz</a>, is
-      <a
-        href="https://github.com/cinda87/p-w7-vanilla-weather-app"
-        target="_blank"
-        >open sourced on GitHub</a
-      >
-      and
-      <a href="https://jacinda-weather-forcast.netlify.app/" target="_blank"
-        >hosted on Netlify</a
-      >
-    </footer>
+      <!--Weekly forecast-->
+      <div class="flex-weekly-forecast">
+        <div class="days">
+          <p class="day">Tuesday</p>
+          <p class="day">Wednesday</p>
+          <p class="day">Thursday</p>
+          <p class="day">Friday</p>
+          <p class="day">Saturday</p>
+        </div>
+        <div class="days-icon">
+          <div>
+            <img class="day-icon" src="media/cloudy.svg" alt="" />
+          </div>
+          <div>
+            <img class="day-icon" src="media/snow.svg" alt="" />
+          </div>
+          <div>
+            <img class="day-icon" src="media/thunderstorms-rain.svg" alt="" />
+          </div>
+          <div>
+            <img class="day-icon" src="media/clear-day.svg" alt="" />
+          </div>
+          <div>
+            <img class="day-icon" src="media/cloudy.svg" alt="" />
+          </div>
+        </div>
+        <div class="high">
+          <p>
+            <span class="material-symbols-outlined red"> thermometer </span>11°
+          </p>
+          <p>
+            <span class="material-symbols-outlined red"> thermometer </span>6°
+          </p>
+          <p>
+            <span class="material-symbols-outlined red"> thermometer </span>12°
+          </p>
+          <p>
+            <span class="material-symbols-outlined red"> thermometer </span>10°
+          </p>
+          <p>
+            <span class="material-symbols-outlined red"> thermometer </span>11°
+          </p>
+        </div>
+        <div class="low">
+          <p>
+            <span class="material-symbols-outlined blue"> thermometer </span>2°
+          </p>
+          <p>
+            <span class="material-symbols-outlined blue"> thermometer </span>0°
+          </p>
+          <p>
+            <span class="material-symbols-outlined blue"> thermometer </span>3°
+          </p>
+          <p>
+            <span class="material-symbols-outlined blue"> thermometer </span>2°
+          </p>
+          <p>
+            <span class="material-symbols-outlined blue"> thermometer </span>4°
+          </p>
+        </div>
+      </div>
 
+      <footer>
+        This project was coded by
+        <a href="https://github.com/cinda87" target="_blank">Jacinda Bietz</a>,
+        is
+        <a
+          href="https://github.com/cinda87/p-w7-vanilla-weather-app"
+          target="_blank"
+          >open sourced on GitHub</a
+        >
+        and
+        <a href="https://jacinda-weather-forecast.netlify.app/" target="_blank"
+          >hosted on Netlify</a
+        >
+      </footer>
+    </div>
     <script type="text/javascript" src="src/index.js"></script>
   </body>
 </html>
