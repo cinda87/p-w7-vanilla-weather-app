@@ -1,10 +1,12 @@
+/*Full Page*/
+
 video {
   left: 0;
-  min-height: 100%;
   min-width: 100%;
+  min-height: 100%;
   position: absolute;
   top: 0;
-  z-index: -100;
+  z-index: -1;
 }
 
 body {
@@ -20,9 +22,16 @@ body {
   border-radius: 16px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   margin: 20px auto;
-  max-width: 700px;
+  max-width: 600px;
   padding: 30px;
-  opacity: 90%;
+  opacity: 95%;
+}
+
+.red {
+  color: #ff0000;
+}
+.blue {
+  color: blue;
 }
 
 /* Search Bar */
@@ -39,13 +48,20 @@ body {
   background: #2a6171;
   border-radius: 6px;
   border: none;
-  color: #f3d516;
+  color: #F0B32E;
   font-size: 16px;
   font-weight: bold;
   margin-left: 5px;
   padding: 15px 30px;
 }
 
+header {
+  border-bottom: 1px solid #F0B32E;
+  padding: 0 0 30px 0;
+}
+
+
+/*Top box current weather*/
 main {
   display: flex;
   justify-content: space-between;
@@ -53,17 +69,14 @@ main {
   margin-top: 20px;
 }
 
-header {
-  border-bottom: 1px solid #f3d516;
-  padding: 0 0 30px 0;
-}
 
-.header {
+/*Left*/
+.location-time {
   color: #2a6171;
   text-align: center;
 }
 
-h1 {
+.location {
   font-size: 60px;
   margin: 3px;
 }
@@ -84,21 +97,19 @@ h1 {
   width: 200px;
 }
 
-.unit-type {
-  justify-content: flex-start;
-}
 .img-today-weather {
   object-fit: contain;
 }
+
+.unit-type {
+  justify-content: flex-start;
+}
+
 .current-temp {
-  font-size: 100px;
+  font-size: 115px;
+  font-weight: bold;
 }
-.red {
-  color: #ff0000;
-}
-.blue {
-  color: blue;
-}
+
 
 .img-desc,
 .hi-low-today,
@@ -109,26 +120,32 @@ h1 {
   margin: 5px;
 }
 
+.hi-low-today{
+  text-align: justify;
+}
+
+/*Right*/
 .todays-weather {
-  margin-top: 15px;
+  margin-top: 20px;
 }
 .todays-info {
   background-color: #75cac3;
   border-radius: 6px;
   border: none;
   color: #2a6171;
-  font-size: 32px;
-  margin: 10px 0;
+  font-size: 20px;
+  margin: 20px 0;
   padding: 15px 30px;
   text-align: left;
-  vertical-align: middle;
 }
 
+
+/*bottom box week forecast*/
 .flex-weekly-forecast {
   background: #2a6171;
   border-radius: 6px;
   border: none;
-  color: #f3d516;
+  color: #F0B32E;
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
@@ -138,19 +155,22 @@ h1 {
 .high,
 .low {
   font-size: 32px;
+
 }
 .day-icon {
   width: 75px;
 }
 
+/*Footer*/
+
 footer {
-  border-top: 1px solid #f3d516;
+  border-top: 1px solid #F0B32E;
   color: #2a6171;
-  font-size: 13px;
+  font-size: 17px;
   padding: 30px 0 0 0;
   text-align: center;
 }
 
-a {
+.footer {
   color: #2a6171;
 }

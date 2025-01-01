@@ -25,11 +25,12 @@
     <div class="weather-app">
       <!--Search Bar-->
       <header>
-        <form class="search-form" action="">
+        <form class="search-form" action="" id="search-form">
           <input
             type="search"
             placeholder="Enter a city.."
             required
+            id="search-form-input"
             class="search-form-input"
           />
           <input type="submit" value="search" class="search-form-button" />
@@ -38,9 +39,9 @@
 
       <!--Todays forecast-->
       <main>
-        <div class="header">
-          <h1>Paris, France</h1>
-          <h2 class="date-time">Wed, 1 January, 8:29</h2>
+        <div class="location-time">
+          <h1 class="location" id="location">Paris, France</h1>
+          <h2 class="date-time">Wednesday, 1 January, 15:29</h2>
           <div class="main-weather-flex">
             <div class="left-box">
               <img
@@ -138,15 +139,20 @@
 
       <footer>
         This project was coded by
-        <a href="https://github.com/cinda87" target="_blank">Jacinda Bietz</a>,
-        is
+        <a class="footer" href="https://github.com/cinda87" target="_blank"
+          >Jacinda Bietz</a
+        >, is
         <a
+          class="footer"
           href="https://github.com/cinda87/p-w7-vanilla-weather-app"
           target="_blank"
           >open sourced on GitHub</a
         >
         and
-        <a href="https://jacinda-weather-forecast.netlify.app/" target="_blank"
+        <a
+          class="footer"
+          href="https://jacinda-weather-forecast.netlify.app/"
+          target="_blank"
           >hosted on Netlify</a
         >
       </footer>
