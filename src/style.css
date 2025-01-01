@@ -50,7 +50,7 @@ body {
 
 .header {
   text-align: center;
-  color:#2a6171
+  color: #2a6171;
 }
 h1 {
   margin: 3px;
@@ -72,19 +72,39 @@ h3 {
   color: #f3d516;
 }
 
-.todays-weather, .hi-low, .current-temp{
+.todays-weather,
+.hi-low,
+.current-temp {
   margin: auto;
 }
 
-.todays-weather{
+.todays-weather {
   padding-top: 8px;
-  
 }
 .current-temp {
   font-size: 75px;
 }
 
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
 
+.forcast-image {
+  object-fit: contain;
+}
+
+.daily-forcast {
+  background: #d7f7f5;
+  max-width: 75px;
+  margin: 30px auto;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  color: #2a6171;
+}
 
 footer {
   border-top: 1px solid #f3d516;
