@@ -60,12 +60,10 @@ header {
   padding: 0 0 30px 0;
 }
 
-/*Top box current weather*/
+/*Top  box current weather*/
 main {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
-  margin-top: 20px;
 }
 
 /*Left*/
