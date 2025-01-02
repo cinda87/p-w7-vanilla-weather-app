@@ -61,7 +61,7 @@ let month = months[dateTime.getMonth()];
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
-return  `${day}, ${month} ${date} ${hours}:${minutes}`; 
+return  `${day}, ${month} ${date}, at ${hours}:${minutes}`; 
 }
 
  
