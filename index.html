@@ -42,21 +42,15 @@
       <main>
         <div class="location-time">
           <h1 class="location" id="city"></h1>
-          <h2 class="date-time">Wednesday, 1 January, 15:29</h2>
+          <h2 class="date-time" id="time"></h2>
           <div class="main-weather-flex">
             <div class="left-box">
-              <img
-                class="img-today-weather"
-                src="media/clear-day.svg"
-                alt="Current Weather Image"
-              />
-              <p class="img-desc">Clear skies</p>
+              <div class="img-today-weather" id="icon"></div>
+              <p class="img-desc" id="description"></p>
             </div>
             <div class="right-box">
               <span class="current-temp" id="temperature"></span>
               <a class="unit-type">°C</a>
-              <a class="line">|</a>
-              <a class="unit-type">°F</a>
               <p class="hi-low-today">
                 <span class="material-symbols-outlined red"> thermometer </span>
                 <span class="max">15°</span>
@@ -67,12 +61,22 @@
               </p>
             </div>
           </div>
+          <!--Units Toggle-->
+          <div class="units-toggle-container">
+            <label for="units" class="units">
+              <span class="units-text">°C</span>
+              <input type="checkbox" id="units" />
+              <span class="units-button"></span>
+              <span class="units-text">°F</span>
+            </label>
+          </div>
         </div>
+        <!--Right Container-->
         <div class="todays-weather">
-          <p class="todays-info">Feels Like: 15°C</p>
-          <p class="todays-info">Pressure: 1200</p>
-          <p class="todays-info">Humidity: 66%</p>
-          <p class="todays-info">Wind: 3.12km/h</p>
+          <p class="todays-info">Feels Like: <span id="feels-like"></span>°</p>
+          <p class="todays-info">Pressure: <span id="pressure"></span>mbar</p>
+          <p class="todays-info">Humidity: <span id="humidity"></span>%</p>
+          <p class="todays-info">Wind: <span id="wind-speed"></span>km/h</p>
         </div>
       </main>
 

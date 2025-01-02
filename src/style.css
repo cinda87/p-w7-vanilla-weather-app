@@ -48,7 +48,7 @@ body {
   background: #2a6171;
   border-radius: 6px;
   border: none;
-  color: #F0B32E;
+  color: #f0b32e;
   font-size: 16px;
   font-weight: bold;
   margin-left: 5px;
@@ -56,10 +56,9 @@ body {
 }
 
 header {
-  border-bottom: 1px solid #F0B32E;
+  border-bottom: 1px solid #f0b32e;
   padding: 0 0 30px 0;
 }
-
 
 /*Top box current weather*/
 main {
@@ -68,7 +67,6 @@ main {
   margin-bottom: 20px;
   margin-top: 20px;
 }
-
 
 /*Left*/
 .location-time {
@@ -98,7 +96,6 @@ main {
 }
 
 .img-today-weather {
-  object-fit: contain;
 }
 
 .unit-type {
@@ -110,7 +107,6 @@ main {
   font-weight: bold;
 }
 
-
 .img-desc,
 .hi-low-today,
 .unit-type {
@@ -120,7 +116,7 @@ main {
   margin: 5px;
 }
 
-.hi-low-today{
+.hi-low-today {
   text-align: justify;
 }
 
@@ -135,8 +131,76 @@ main {
   color: #2a6171;
   font-size: 20px;
   margin: 20px 0;
-  padding: 15px 30px;
+  padding: 15px 15px;
   text-align: left;
+}
+
+
+/*toggle*/
+.units-toggle-container {
+  padding-bottom: 20px;
+}
+
+.units {
+  background-color: #2a6171;
+  border-radius: 30px;
+  border: 1px solid #f0b32e;
+  box-shadow: inset 0px -1px 5px #f0b32e;
+  color: #f0b32e;
+  display: flex;
+  font-size: 16px;
+  justify-content: space-between;
+  line-height: 1.5;
+  margin: 10px auto;
+  padding: 2px 12px;
+  position: relative;
+  width: 100px;
+}
+
+.units input {
+  appearance: none;
+  border-radius: 30px;
+  cursor: pointer;
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.units input:focus-visible {
+  margin: 0px auto;
+}
+
+.units-text {
+  padding: 4px 0px;
+  user-select: none;
+}
+
+.units-button {
+  border-radius: 30px;
+  box-shadow: inset 0px -1px 5px #f0b32e;
+  height: 32px;
+  pointer-events: none;
+  position: relative;
+  width: 55px;
+}
+
+.units-button::after {
+  background-color: #f0b32e;
+  border-radius: 30px;
+  box-shadow: 0px 1px 2px #f0b32e;
+  content: "";
+  height: 25px;
+  left: 4px;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  transition: 200ms cubic-bezier(0.96, -0.11, 0, 1.12);
+  width: 25px;
+}
+
+.units input:checked ~ .units-button::after {
+  transform: translate3d(22px, -50%, 0);
 }
 
 
@@ -145,7 +209,7 @@ main {
   background: #2a6171;
   border-radius: 6px;
   border: none;
-  color: #F0B32E;
+  color: #f0b32e;
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
@@ -155,7 +219,6 @@ main {
 .high,
 .low {
   font-size: 32px;
-
 }
 .day-icon {
   width: 75px;
@@ -164,7 +227,7 @@ main {
 /*Footer*/
 
 footer {
-  border-top: 1px solid #F0B32E;
+  border-top: 1px solid #f0b32e;
   color: #2a6171;
   font-size: 17px;
   padding: 30px 0 0 0;
