@@ -23,6 +23,7 @@
     <video autoplay muted loop>
       <source src="media/background.mp4" type="video/mp4" />
     </video>
+
     <div class="weather-app">
       <!--Search Bar-->
       <header>
@@ -45,102 +46,49 @@
           <h2 class="date-time" id="time"></h2>
           <div class="main-weather-flex">
             <div class="left-box">
-              <div class="img-today-weather" id="icon"></div>
+              <div id="icon">
+                <img
+                  class="img-today-weather"
+                  src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-night.png"
+                />
+              </div>
               <p class="img-desc" id="description"></p>
             </div>
             <div class="right-box">
               <span class="current-temp" id="temperature"></span>
               <a class="unit-type">°C</a>
-              <p class="hi-low-today">
-                <span class="material-symbols-outlined red"> thermometer </span>
-                <span class="max">15°</span>
-                <span class="material-symbols-outlined blue">
-                  thermometer
-                </span>
-                <span class="min">7°</span>
-              </p>
+              <!--Units Toggle-->
+              <div class="units-toggle-container">
+                <label for="myCheckbox" class="units">
+                  <span class="units-text">°C</span>
+                  <input type="checkbox" id="myCheckbox" />
+                  <span class="units-button"></span>
+                  <span class="units-text">°F</span>
+                </label>
+              </div>
             </div>
           </div>
-          <!--Units Toggle-->
-          <div class="units-toggle-container">
-            <label for="units" class="units">
-              <span class="units-text">°C</span>
-              <input type="checkbox" id="units" />
-              <span class="units-button"></span>
-              <span class="units-text">°F</span>
-            </label>
-          </div>
         </div>
+
         <!--Right Container-->
         <div class="todays-weather">
-          <p class="todays-info">Feels Like: <span id="feels-like"></span>°<span ></span></p>
+          <p class="todays-info">
+            Feels Like: <span id="feels-like"></span>°<span></span>
+          </p>
           <p class="todays-info">Pressure: <span id="pressure"></span>mbar</p>
           <p class="todays-info">Humidity: <span id="humidity"></span>%</p>
           <p class="todays-info">Wind: <span id="wind-speed"></span>km/h</p>
         </div>
-      </main>
 
-      <!--Weekly forecast-->
-      <div class="flex-weekly-forecast">
-        <div class="days">
-          <p class="day">Tuesday</p>
-          <p class="day">Wednesday</p>
-          <p class="day">Thursday</p>
-          <p class="day">Friday</p>
-          <p class="day">Saturday</p>
-        </div>
-        <div class="days-icon">
-          <div>
-            <img class="day-icon" src="media/cloudy.svg" alt="" />
-          </div>
-          <div>
-            <img class="day-icon" src="media/snow.svg" alt="" />
-          </div>
-          <div>
-            <img class="day-icon" src="media/thunderstorms-rain.svg" alt="" />
-          </div>
-          <div>
-            <img class="day-icon" src="media/clear-day.svg" alt="" />
-          </div>
-          <div>
-            <img class="day-icon" src="media/cloudy.svg" alt="" />
+        <!--Wind Compass-->
+        <div class="compass-flex">
+          <p class="compass-lable">Wind Direction</p>
+          <div class="compass">
+            <div class="compass-needle"></div>
+            <div class="degree-label" id="degree-label">0°</div>
           </div>
         </div>
-        <div class="high">
-          <p>
-            <span class="material-symbols-outlined red"> thermometer </span>11°
-          </p>
-          <p>
-            <span class="material-symbols-outlined red"> thermometer </span>6°
-          </p>
-          <p>
-            <span class="material-symbols-outlined red"> thermometer </span>12°
-          </p>
-          <p>
-            <span class="material-symbols-outlined red"> thermometer </span>10°
-          </p>
-          <p>
-            <span class="material-symbols-outlined red"> thermometer </span>11°
-          </p>
-        </div>
-        <div class="low">
-          <p>
-            <span class="material-symbols-outlined blue"> thermometer </span>2°
-          </p>
-          <p>
-            <span class="material-symbols-outlined blue"> thermometer </span>0°
-          </p>
-          <p>
-            <span class="material-symbols-outlined blue"> thermometer </span>3°
-          </p>
-          <p>
-            <span class="material-symbols-outlined blue"> thermometer </span>2°
-          </p>
-          <p>
-            <span class="material-symbols-outlined blue"> thermometer </span>4°
-          </p>
-        </div>
-      </div>
+      </main>
 
       <footer>
         This project was coded by
@@ -162,6 +110,7 @@
         >
       </footer>
     </div>
+
     <script type="text/javascript" src="src/index.js"></script>
   </body>
 </html>

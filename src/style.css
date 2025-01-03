@@ -15,6 +15,7 @@ body {
   font-style: normal;
   font-variation-settings: "slnt" 0;
   font-weight: <weight>;
+  margin-top: 100px;
 }
 
 .weather-app {
@@ -22,7 +23,7 @@ body {
   border-radius: 16px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   margin: 20px auto;
-  max-width: 600px;
+  max-width: 900px;
   padding: 30px;
   opacity: 95%;
 }
@@ -41,7 +42,7 @@ body {
   border: none;
   font-size: 16px;
   padding: 15px 20px;
-  width: 80%;
+  width: 70%;
 }
 
 .search-form-button {
@@ -53,14 +54,16 @@ body {
   font-weight: bold;
   margin-left: 5px;
   padding: 15px 30px;
+  width: 28%;
 }
 
 header {
   border-bottom: 1px solid #f0b32e;
   padding: 0 0 30px 0;
+  align-items: center;
 }
 
-/*Top  box current weather*/
+/*Top box current weather*/
 main {
   display: flex;
   justify-content: space-between;
@@ -91,9 +94,15 @@ main {
 .right-box {
   align-self: flex-end;
   width: 200px;
+  align-items: center;
+}
+.left-box {
+  margin-bottom: 50px;
 }
 
 .img-today-weather {
+  width: 200px;
+  height: 200px;
 }
 
 .unit-type {
@@ -132,7 +141,6 @@ main {
   padding: 15px 15px;
   text-align: left;
 }
-
 
 /*toggle*/
 .units-toggle-container {
@@ -201,27 +209,6 @@ main {
   transform: translate3d(22px, -50%, 0);
 }
 
-
-/*bottom box week forecast*/
-.flex-weekly-forecast {
-  background: #2a6171;
-  border-radius: 6px;
-  border: none;
-  color: #f0b32e;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-  padding: 15px 30px;
-}
-.day,
-.high,
-.low {
-  font-size: 32px;
-}
-.day-icon {
-  width: 75px;
-}
-
 /*Footer*/
 
 footer {
@@ -234,4 +221,47 @@ footer {
 
 .footer {
   color: #2a6171;
+}
+
+/*compass*/
+
+.compass {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #f0b32e;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.compass-lable {
+  border-radius: 6px;
+  border: none;
+  color: #2a6171;
+  font-size: 40px;
+  padding: 15px 15px;
+  text-align: center;
+  height: 20px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+.compass-needle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  width: 150px;
+  height: 10px;
+  background-color: black;
+  border-radius: 5px;
+  transform: translate(-50%, -100%);
+}
+.degree-label {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
 }

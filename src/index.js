@@ -11,8 +11,7 @@ function refreshWeather(response) {
   let feelsLikeElement = document.querySelector("#feels-like");
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
-
-
+  
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
@@ -22,49 +21,39 @@ function refreshWeather(response) {
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
   pressureElement.innerHTML = response.data.temperature.pressure;
   feelsLikeElement.innerHTML = response.data.temperature.feels_like;
+  updateWindNeedle = response.data.wind.degree;
 }
 
 //Date/Time
-function formatDate(dateTime){
+function formatDate(dateTime) {
+  let date = dateTime.getDate();
+  let hours = dateTime.getHours();
+  let minutes = dateTime.getMinutes();
 
-let date = dateTime.getDate();
-let hours = dateTime.getHours();
-let minutes = dateTime.getMinutes();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[dateTime.getDay()];
 
-let days = [
-  "Sun",
-  "Mon",
-  "Tue",
-  "Wed",
-  "Thu",
-  "Fri",
-  "Sat",
-];
-let day = days[dateTime.getDay()];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "Septemper",
+    "October",
+    "November",
+    "December",
+  ];
 
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "Septemper",
-  "October",
-  "November",
-  "December",
-];
-
-let month = months[dateTime.getMonth()];
-if (minutes < 10) {
-  minutes = `0${minutes}`;
+  let month = months[dateTime.getMonth()];
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${day}, ${month} ${date}, at ${hours}:${minutes}`;
 }
-return  `${day}, ${month} ${date}, at ${hours}:${minutes}`; 
-}
-
- 
 
 //api
 function searchCity(city) {
@@ -85,5 +74,16 @@ function handleSearchSubmit(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-searchCity("Oslo");
+//Wind Compass
+const needle = document.querySelector(".compass-needle");
+const degreeLabel = document.querySelector(".degree-label");
 
+
+function updateWindNeedle(degree) {
+  needle.style.transform = `translate(-50%, -100%) rotate(${degree}deg)`;
+  degreeLabel.textContent = `${degree}°`;
+  
+}
+
+
+searchCity("Oslo");
