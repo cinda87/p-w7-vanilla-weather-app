@@ -11,7 +11,10 @@ function refreshWeather(response) {
   let feelsLikeElement = document.querySelector("#feels-like");
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
-  
+  const needle = document.querySelector(".compass-needle");
+  const degreeLabel = document.querySelector(".degree-label");
+  let degree = response.data.wind.degree;
+
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
@@ -21,7 +24,8 @@ function refreshWeather(response) {
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
   pressureElement.innerHTML = response.data.temperature.pressure;
   feelsLikeElement.innerHTML = response.data.temperature.feels_like;
-  updateWindNeedle = response.data.wind.degree;
+  needle.style.transform = `translate(-50%, -100%) rotate(${degree}deg)`;
+  degreeLabel.textContent = `${degree}°`;
 }
 
 //Date/Time
@@ -75,15 +79,5 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 //Wind Compass
-const needle = document.querySelector(".compass-needle");
-const degreeLabel = document.querySelector(".degree-label");
-
-
-function updateWindNeedle(degree) {
-  needle.style.transform = `translate(-50%, -100%) rotate(${degree}deg)`;
-  degreeLabel.textContent = `${degree}°`;
-  
-}
-
 
 searchCity("Oslo");
