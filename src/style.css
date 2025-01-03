@@ -21,7 +21,7 @@ body {
 .weather-app {
   background: #d7f7f5;
   border-radius: 16px;
-  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  box-shadow: 10px 10px 10px #75cac3;
   margin: 20px auto;
   max-width: 900px;
   padding: 30px;
@@ -234,6 +234,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
 }
 
 .compass-lable {
@@ -252,16 +253,29 @@ footer {
   top: 50%;
   left: 50%;
   transform-origin: 50% 100%;
-  width: 150px;
-  height: 10px;
-  background-color: black;
+  width: 10px;
+  height: 100px;
+  background: linear-gradient(109.6deg, #2a6171 5%, #d7f7f5 95%);
   border-radius: 5px;
   transform: translate(-50%, -100%);
 }
+
 .degree-label {
   position: absolute;
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2a6171;
+}
+
+.direction-label {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  font-weight: bold;
+  color: #2a6171;
 }

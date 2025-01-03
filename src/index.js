@@ -15,6 +15,7 @@ function refreshWeather(response) {
   const degreeLabel = document.querySelector(".degree-label");
   let degree = response.data.wind.degree;
 
+
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
@@ -60,9 +61,10 @@ function formatDate(dateTime) {
 }
 
 //api
-function searchCity(city) {
+
+function searchCity(city, units) {
   let apiKey = "a050491735e3o6daf6dd43f3ab206bct";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(refreshWeather);
 }
 
@@ -72,12 +74,41 @@ function handleSearchSubmit(event) {
   let searchInput = document.querySelector("#search-form-input");
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = searchInput.value;
-  searchCity(searchInput.value);
+  searchCity(searchInput.value, "metric");
 }
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-//Wind Compass
+// Units Toggle
+function changeUnits(event) {
+  console.log(event);
 
-searchCity("Oslo");
+  let tempUnit = document.querySelector("#unit-type");
+  let windUnit = document.querySelector("#wind-unit");
+  let feelsUnit = document.querySelector("#feels-unit-type");
+  let city = document.querySelector("#city").innerHTML;
+  console.log(city)
+
+  if (event.target.checked) {
+    tempUnit.innerHTML = "°F";
+    feelsUnit.innerHTML = "°F";
+    windUnit.innerHTML = "mph";
+    
+    searchCity(city, "imperial")
+  } else {
+    tempUnit.innerHTML = "°C";
+    feelsUnit.innerHTML = "°C";
+    windUnit.innerHTML = "km/h";
+
+    searchCity(city, "metric");
+  }
+  
+}
+let unitToggle = document.querySelector("#myCheckbox");
+unitToggle.addEventListener("click", (event) => changeUnits(event));
+
+
+
+
+searchCity("Oslo", "metric");

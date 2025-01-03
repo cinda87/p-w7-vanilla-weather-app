@@ -56,7 +56,7 @@
             </div>
             <div class="right-box">
               <span class="current-temp" id="temperature"></span>
-              <a class="unit-type">°C</a>
+              <a class="unit-type" id="unit-type">°C</a>
               <!--Units Toggle-->
               <div class="units-toggle-container">
                 <label for="myCheckbox" class="units">
@@ -73,11 +73,11 @@
         <!--Right Container-->
         <div class="todays-weather">
           <p class="todays-info">
-            Feels Like: <span id="feels-like"></span>°<span></span>
+            Feels Like: <span id="feels-like"></span><span id="feels-unit-type">°C</span>
           </p>
           <p class="todays-info">Pressure: <span id="pressure"></span>mbar</p>
           <p class="todays-info">Humidity: <span id="humidity"></span>%</p>
-          <p class="todays-info">Wind: <span id="wind-speed"></span>km/h</p>
+          <p class="todays-info">Wind: <span id="wind-speed"></span ><span id="wind-unit">km/h</span></p>
         </div>
 
         <!--Wind Compass-->
@@ -86,6 +86,7 @@
           <div class="compass">
             <div class="compass-needle"></div>
             <div class="degree-label" id="degree-label">0°</div>
+            <div class="direction-label" id="direction">NE</div>
           </div>
         </div>
       </main>
