@@ -6,7 +6,7 @@ video {
   min-width: 100%;
   position: absolute;
   top: 0;
-  z-index: -1
+  z-index: -1;
 }
 
 body {
@@ -60,48 +60,59 @@ header {
   padding: 0 0 30px 0;
 }
 
-/*Top box current weather*/
+.location {
+  color: #2a6171;
+  text-align: center;
+  text-shadow: 2px 0 #f0b32e, -2px 0 #f0b32e, 0 2px #f0b32e, 0 -2px #f0b32e, 1px 1px #f0b32e, -1px -1px #f0b32e, 1px -1px #f0b32e, -1px 1px #f0b32e;
+}
+
+.city {
+  font-size: 100px;
+  margin: 60px 0 30px 0;
+}
+
+.country {
+  font-size: 50px;
+  margin: 10px 0px;
+}
+
+/*Left Box: Date, Weather Description, Temperature*/
 main {
   display: flex;
   height: fit-content;
   justify-content: space-between;
-  margin-top: 40px;
+  vertical-align: bottom;
 }
 
 /*Left*/
-.location-time {
+.left-box {
   color: #2a6171;
   text-align: center;
-}
-
-.location {
-  font-size: calc(5vw);
-  margin: 3px;
+  vertical-align: bottom;
 }
 
 .date-time {
-  font-size: calc(2vw);
+  font-size: 40px;
   margin: 35px;
 }
 
 .main-weather-flex {
   display: flex;
   justify-content: center;
+  margin-top: 60px;
 }
 
-.left-box,
-.right-box {
-  align-self: flex-end;
+.left-box-inner,
+.right-box-inner {
   width: 200px;
 }
 
-.left-box {
-  margin-bottom: 50px;
+.left-box-inner {
+
 }
 
 .img-today-weather {
   height: 200px;
-  vertical-align: middle;
   width: 200px;
 }
 
@@ -128,10 +139,9 @@ main {
 }
 
 /*toggle*/
-.units-toggle-container {
-  padding-bottom: 20px;
+.units-toggle-container{
+  margin-top: 30px;
 }
-
 .units {
   background-color: #2a6171;
   border-radius: 30px;
@@ -195,9 +205,11 @@ main {
 }
 
 /*Right*/
-.todays-weather {
+.middle-box {
+  align-items: flex-end;
   margin-top: 20px;
 }
+
 .todays-info {
   background-color: #75cac3;
   border-radius: 6px;
@@ -208,7 +220,6 @@ main {
   padding: 15px 15px;
   text-align: left;
 }
-
 
 /*Footer*/
 footer {
@@ -224,6 +235,9 @@ footer {
 }
 
 /*compass*/
+.right-box {
+  align-items: flex-end;
+}
 .compass {
   background-color: #f0b32e;
   border-radius: 50%;
@@ -246,7 +260,6 @@ footer {
   margin: 20px 0;
   padding: 15px 15px;
   text-align: center;
- 
 }
 .compass-needle {
   background: linear-gradient(109.6deg, #75cac3 5%, #d7f7f5 95%);

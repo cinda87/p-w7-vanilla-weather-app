@@ -39,14 +39,16 @@
           />
         </form>
       </header>
-
+      <div class="location">
+        <h1 class="city" id="city"></h1>
+        <h2 class="country" id="country"></h2>
+      </div>
       <!--Todays forecast-->
       <main>
-        <div class="location-time">
-          <h1 class="location" id="city"></h1>
-          <h2 class="date-time" id="time"></h2>
+        <div class="left-box">
+          <p class="date-time" id="time"></p>
           <div class="main-weather-flex">
-            <div class="left-box">
+            <div class="left-box-inner">
               <div id="icon">
                 <img
                   class="img-today-weather"
@@ -55,7 +57,7 @@
               </div>
               <p class="img-desc" id="description"></p>
             </div>
-            <div class="right-box">
+            <div class="right-box-inner">
               <span class="current-temp" id="temperature"></span>
               <a class="unit-type" id="unit-type">°C</a>
               <!--Units Toggle-->
@@ -72,7 +74,7 @@
         </div>
 
         <!--Right Container-->
-        <div class="todays-weather">
+        <div class="middle-box">
           <p class="todays-info">
             Feels Like: <span id="feels-like"></span
             ><span id="feels-unit-type">°C</span>
@@ -85,11 +87,13 @@
         </div>
 
         <!--Wind Compass-->
-        <div class="compass-flex">
+        <div class="Right-box">
           <p class="compass-lable">Wind Direction</p>
           <div class="compass">
             <div class="compass-needle" id="compass-needle"></div>
-            <div class="degree-label" ><span id="degree"></span><span>°</span></div>
+            <div class="degree-label">
+              <span id="degree"></span><span>°</span>
+            </div>
             <div class="direction-label" id="cardinal-direction"></div>
           </div>
         </div>

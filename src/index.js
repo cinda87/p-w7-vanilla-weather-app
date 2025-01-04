@@ -1,8 +1,7 @@
 //update current temperature
 function refreshWeather(response) {
-  const degreeLabel = document.querySelector("#degree");
-  const needle = document.querySelector("#compass-needle");
   let cityElement = document.querySelector("#city");
+  let countryElement = document.querySelector("#country");
   let date = new Date(response.data.time * 1000);
   let degree = response.data.wind.degree;
   let descriptionElement = document.querySelector("#description");
@@ -16,17 +15,20 @@ function refreshWeather(response) {
   let windSpeedElement = document.querySelector("#wind-speed");
 
   cityElement.innerHTML = response.data.city;
-  degreeLabel.textContent = `${degree}`;
+  countryElement.innerHTML = response.data.country;
   descriptionElement.innerHTML = response.data.condition.description;
   feelsLikeElement.innerHTML = response.data.temperature.feels_like;
   humidityElement.innerHTML = response.data.temperature.humidity;
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
-  needle.style.transform = `translate(-50%, -100%) rotate(${degree}deg)`;
   pressureElement.innerHTML = response.data.temperature.pressure;
   temperatureElement.innerHTML = Math.round(temperature);
   timeElement.innerHTML = formatDate(date);
   windSpeedElement.innerHTML = response.data.wind.speed;
 
+  const degreeLabel = document.querySelector("#degree");
+  const needle = document.querySelector("#compass-needle");
+  degreeLabel.textContent = `${degree}`;
+  needle.style.transform = `translate(-50%, -100%) rotate(${degree}deg)`;
   const cardinalDirection = document.querySelector("#degree").innerHTML;
   const windDirection = document.querySelector("#cardinal-direction");
   windDirection.innerHTML = degreesToCardinal(cardinalDirection);
@@ -73,8 +75,8 @@ function searchCity(city, units) {
 //Search changes location title
 function handleSearchSubmit(event) {
   event.preventDefault();
-  let searchInput = document.querySelector("#search-form-input");
   let cityElement = document.querySelector("#city");
+  let searchInput = document.querySelector("#search-form-input");
   cityElement.innerHTML = searchInput.value;
   searchCity(searchInput.value, unitSystem);
 }
@@ -84,20 +86,20 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 // Units Toggle
 function changeUnits(event) {
+  let city = document.querySelector("#city").innerHTML;
+  let feelsUnit = document.querySelector("#feels-unit-type");
   let tempUnit = document.querySelector("#unit-type");
   let windUnit = document.querySelector("#wind-unit");
-  let feelsUnit = document.querySelector("#feels-unit-type");
-  let city = document.querySelector("#city").innerHTML;
 
   if (event.target.checked) {
     unitSystem = "imperial";
-    tempUnit.innerHTML = "°F";
     feelsUnit.innerHTML = "°F";
+    tempUnit.innerHTML = "°F";
     windUnit.innerHTML = "mph";
   } else {
     unitSystem = "metric";
-    tempUnit.innerHTML = "°C";
     feelsUnit.innerHTML = "°C";
+    tempUnit.innerHTML = "°C";
     windUnit.innerHTML = "km/h";
   }
 
@@ -133,4 +135,4 @@ function degreesToCardinal(degrees) {
 }
 
 let unitSystem = "metric";
-searchCity("Oslo", unitSystem);
+searchCity("Geiranger", unitSystem);
