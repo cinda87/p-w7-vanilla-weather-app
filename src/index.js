@@ -1,32 +1,31 @@
 //update current temperature
 function refreshWeather(response) {
-  let temperatureElement = document.querySelector("#temperature");
-  let temperature = response.data.temperature.current;
+  const degreeLabel = document.querySelector("#degree");
+  const needle = document.querySelector("#compass-needle");
   let cityElement = document.querySelector("#city");
+  let date = new Date(response.data.time * 1000);
+  let degree = response.data.wind.degree;
   let descriptionElement = document.querySelector("#description");
+  let feelsLikeElement = document.querySelector("#feels-like");
   let humidityElement = document.querySelector("#humidity");
-  let windSpeedElement = document.querySelector("#wind-speed");
   let iconElement = document.querySelector("#icon");
   let pressureElement = document.querySelector("#pressure");
-  let feelsLikeElement = document.querySelector("#feels-like");
+  let temperature = response.data.temperature.current;
+  let temperatureElement = document.querySelector("#temperature");
   let timeElement = document.querySelector("#time");
-  let date = new Date(response.data.time * 1000);
-  const needle = document.querySelector(".compass-needle");
-  const degreeLabel = document.querySelector(".degree-label");
-  let degree = response.data.wind.degree;
-
+  let windSpeedElement = document.querySelector("#wind-speed");
 
   cityElement.innerHTML = response.data.city;
-  timeElement.innerHTML = formatDate(date);
+  degreeLabel.textContent = `${degree}`;
   descriptionElement.innerHTML = response.data.condition.description;
-  humidityElement.innerHTML = response.data.temperature.humidity;
-  windSpeedElement.innerHTML = response.data.wind.speed;
-  temperatureElement.innerHTML = Math.round(temperature);
-  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
-  pressureElement.innerHTML = response.data.temperature.pressure;
   feelsLikeElement.innerHTML = response.data.temperature.feels_like;
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
   needle.style.transform = `translate(-50%, -100%) rotate(${degree}deg)`;
-  degreeLabel.textContent = `${degree}°`;
+  pressureElement.innerHTML = response.data.temperature.pressure;
+  temperatureElement.innerHTML = Math.round(temperature);
+  timeElement.innerHTML = formatDate(date);
+  windSpeedElement.innerHTML = response.data.wind.speed;
 }
 
 //Date/Time
@@ -61,7 +60,6 @@ function formatDate(dateTime) {
 }
 
 //api
-
 function searchCity(city, units) {
   let apiKey = "a050491735e3o6daf6dd43f3ab206bct";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
@@ -82,20 +80,17 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 // Units Toggle
 function changeUnits(event) {
-  console.log(event);
-
   let tempUnit = document.querySelector("#unit-type");
   let windUnit = document.querySelector("#wind-unit");
   let feelsUnit = document.querySelector("#feels-unit-type");
   let city = document.querySelector("#city").innerHTML;
-  console.log(city)
 
   if (event.target.checked) {
     tempUnit.innerHTML = "°F";
     feelsUnit.innerHTML = "°F";
     windUnit.innerHTML = "mph";
-    
-    searchCity(city, "imperial")
+
+    searchCity(city, "imperial");
   } else {
     tempUnit.innerHTML = "°C";
     feelsUnit.innerHTML = "°C";
@@ -103,12 +98,37 @@ function changeUnits(event) {
 
     searchCity(city, "metric");
   }
-  
 }
 let unitToggle = document.querySelector("#myCheckbox");
 unitToggle.addEventListener("click", (event) => changeUnits(event));
 
+//Degrees to Cardindal
+function degreesToCardinal(degrees) {
+  const sectors = [
+    "N",
+    "NNE",
+    "NE",
+    "ENE",
+    "E",
+    "ESE",
+    "SE",
+    "SSE",
+    "S",
+    "SSW",
+    "SW",
+    "WSW",
+    "W",
+    "WNW",
+    "NW",
+    "NNW",
+  ];
 
+  const index = Math.round(degrees / 22.5) % 16;
+  return sectors[index];
 
+}
+const cardinalDirection = document.querySelector("#degree").innerHTML;
+const windDirection = document.querySelector("#cardinal-direction");
+windDirection.innerHTML = degreesToCardinal(cardinalDirection);
 
 searchCity("Oslo", "metric");

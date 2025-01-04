@@ -7,12 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Englebert&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Englebert&family=Hammersmith+One&display=swap"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=thermometer"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
@@ -35,7 +31,12 @@
             id="search-form-input"
             class="search-form-input"
           />
-          <input type="submit" value="search" class="search-form-button" />
+          <input
+            id="searchButton"
+            type="submit"
+            value="search"
+            class="search-form-button"
+          />
         </form>
       </header>
 
@@ -73,20 +74,23 @@
         <!--Right Container-->
         <div class="todays-weather">
           <p class="todays-info">
-            Feels Like: <span id="feels-like"></span><span id="feels-unit-type">°C</span>
+            Feels Like: <span id="feels-like"></span
+            ><span id="feels-unit-type">°C</span>
           </p>
           <p class="todays-info">Pressure: <span id="pressure"></span>mbar</p>
           <p class="todays-info">Humidity: <span id="humidity"></span>%</p>
-          <p class="todays-info">Wind: <span id="wind-speed"></span ><span id="wind-unit">km/h</span></p>
+          <p class="todays-info">
+            Wind: <span id="wind-speed"></span><span id="wind-unit">km/h</span>
+          </p>
         </div>
 
         <!--Wind Compass-->
         <div class="compass-flex">
           <p class="compass-lable">Wind Direction</p>
           <div class="compass">
-            <div class="compass-needle"></div>
-            <div class="degree-label" id="degree-label">0°</div>
-            <div class="direction-label" id="direction">NE</div>
+            <div class="compass-needle" id="compass-needle"></div>
+            <div class="degree-label" ><span id="degree"></span><span>°</span></div>
+            <div class="direction-label" id="cardinal-direction"></div>
           </div>
         </div>
       </main>
