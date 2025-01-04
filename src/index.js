@@ -26,6 +26,10 @@ function refreshWeather(response) {
   temperatureElement.innerHTML = Math.round(temperature);
   timeElement.innerHTML = formatDate(date);
   windSpeedElement.innerHTML = response.data.wind.speed;
+
+  const cardinalDirection = document.querySelector("#degree").innerHTML;
+  const windDirection = document.querySelector("#cardinal-direction");
+  windDirection.innerHTML = degreesToCardinal(cardinalDirection);
 }
 
 //Date/Time
@@ -72,7 +76,7 @@ function handleSearchSubmit(event) {
   let searchInput = document.querySelector("#search-form-input");
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = searchInput.value;
-  searchCity(searchInput.value, "metric");
+  searchCity(searchInput.value, unitSystem);
 }
 
 let searchFormElement = document.querySelector("#search-form");
@@ -86,24 +90,25 @@ function changeUnits(event) {
   let city = document.querySelector("#city").innerHTML;
 
   if (event.target.checked) {
+    unitSystem = "imperial";
     tempUnit.innerHTML = "°F";
     feelsUnit.innerHTML = "°F";
     windUnit.innerHTML = "mph";
-
-    searchCity(city, "imperial");
   } else {
+    unitSystem = "metric";
     tempUnit.innerHTML = "°C";
     feelsUnit.innerHTML = "°C";
     windUnit.innerHTML = "km/h";
-
-    searchCity(city, "metric");
   }
+
+  searchCity(city, unitSystem);
 }
 let unitToggle = document.querySelector("#myCheckbox");
 unitToggle.addEventListener("click", (event) => changeUnits(event));
 
 //Degrees to Cardindal
 function degreesToCardinal(degrees) {
+  console.log(degrees);
   const sectors = [
     "N",
     "NNE",
@@ -125,10 +130,7 @@ function degreesToCardinal(degrees) {
 
   const index = Math.round(degrees / 22.5) % 16;
   return sectors[index];
-
 }
-const cardinalDirection = document.querySelector("#degree").innerHTML;
-const windDirection = document.querySelector("#cardinal-direction");
-windDirection.innerHTML = degreesToCardinal(cardinalDirection);
 
-searchCity("Oslo", "metric");
+let unitSystem = "metric";
+searchCity("Oslo", unitSystem);
